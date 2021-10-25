@@ -2028,6 +2028,11 @@ footer .contact li {
   padding: 20px 0;
   color: var(--main-color);
 }
+@media (max-width: 768px) {
+  footer .contact li {
+    flex-direction: column;
+  }
+}
 footer .contact li:first-of-type {
   padding-top: 0;
 }
