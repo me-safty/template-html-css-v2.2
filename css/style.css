@@ -282,9 +282,14 @@ header .li0:hover > a {
   align-items: center;
   transition: top 0.3s, opacity 0.3s;
   opacity: 0;
-  box-shadow: 0 5px 7px 0px #ededed;
+  box-shadow: 0 5px 7px 0px #ededed1f;
 }
-header .li0:last-child:hover .mega {
+/* header .li0:last-child:hover .mega {
+  z-index: 100;
+  opacity: 1;
+  top: calc(100% + 3px);
+} */
+.megaActive {
   z-index: 100;
   opacity: 1;
   top: calc(100% + 3px);
@@ -1169,6 +1174,7 @@ header .li0:last-child:hover .mega {
 /* start our  */
 .our {
   padding: var(--main-padding);
+  position: relative;
 }
 .our .content {
   display: flex;
@@ -1215,7 +1221,7 @@ header .li0:last-child:hover .mega {
   background-color: var(--background-color);
   border-radius: 6px;
 }
-.our .main-box .box .line::before {
+.our .main-box .box .line .prg {
   content: "";
   position: absolute;
   left: 0;
@@ -1223,8 +1229,19 @@ header .li0:last-child:hover .mega {
   height: 100%;
   background-color: var(--main-color);
   border-radius: 6px 0 0 6px;
+  transition: width .5s linear;
+  width: 0;
 }
-.our .main-box .box:first-child .line::before {
+/* .our .main-box .box .line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  border-radius: 6px 0 0 6px;
+} */
+/* .our .main-box .box:first-child .line::before {
   width: 80%;
 }
 .our .main-box .box:nth-child(2) .line::before {
@@ -1235,7 +1252,7 @@ header .li0:last-child:hover .mega {
 }
 .our .main-box .box:last-child .line::before {
   width: 80%;
-}
+} */
 .our .main-box .box .line::after {
   position: absolute;
   right: 0;
@@ -1269,6 +1286,7 @@ header .li0:last-child:hover .mega {
 .how {
   padding: var(--main-padding);
   background-color: var(--background-color);
+  position: relative;
 }
 .how .content {
   display: flex;
@@ -1781,7 +1799,7 @@ header .li0:last-child:hover .mega {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #ffffff27;
+  background-color: #ffffff3d;
   transition: 0.3s;
 }
 .stats .main-box .box .overlay:hover {
@@ -1790,6 +1808,7 @@ header .li0:last-child:hover .mega {
 .stats .main-box .box h1 {
   font-size: 50px;
   margin: 15px 0;
+  transition: 1s;
 }
 .stats .main-box .box p {
   color: var(--main-color);
@@ -2075,3 +2094,28 @@ footer .photos img {
   color: #fff;
   padding: 25px;
 }
+
+/* scroll to top  */
+.scrollTop {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-color);
+  right: -50px;
+  bottom: 30px;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  transition: .2s;
+  opacity: 1;
+}
+.scrollTop:hover {
+  opacity: .8;
+}
+.show {
+  right: 30px;
+} 
